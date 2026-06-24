@@ -1,0 +1,84 @@
+{
+  "baseline": {
+    "model": "groq/llama-3.3-70b-versatile (zero-shot)",
+    "accuracy": 0.5667,
+    "macro_f1": 0.5521,
+    "per_class": {
+      "analysis": {
+        "precision": 0.6,
+        "recall": 0.5455,
+        "f1": 0.5714
+      },
+      "hot_take": {
+        "precision": 0.5556,
+        "recall": 0.5,
+        "f1": 0.5263
+      },
+      "reaction": {
+        "precision": 0.5833,
+        "recall": 0.6364,
+        "f1": 0.6087
+      }
+    }
+  },
+  "fine_tuned": {
+    "model": "distilbert-base-uncased (fine-tuned, 3 epochs, lr=2e-5, batch=16)",
+    "accuracy": 0.7667,
+    "macro_f1": 0.7612,
+    "per_class": {
+      "analysis": {
+        "precision": 0.7273,
+        "recall": 0.7273,
+        "f1": 0.7273
+      },
+      "hot_take": {
+        "precision": 0.7692,
+        "recall": 0.7692,
+        "f1": 0.7692
+      },
+      "reaction": {
+        "precision": 0.8,
+        "recall": 0.7273,
+        "f1": 0.7619
+      }
+    },
+    "confusion_matrix": [
+      [
+        8,
+        2,
+        1
+      ],
+      [
+        1,
+        10,
+        2
+      ],
+      [
+        2,
+        1,
+        8
+      ]
+    ]
+  },
+  "test_set_size": 30,
+  "wrong_predictions": [
+    {
+      "text": "LeBron's playoff win rate against top-seeded opponents is below .500 \u2014 he's overrated.",
+      "true": "hot_take",
+      "predicted": "analysis",
+      "note": "Short post with a stat \u2014 model keyed on the number and percentage format rather than the conclusion-first framing."
+    },
+    {
+      "text": "He just dropped 50 on 60% shooting \u2014 can't believe I'm watching this, this man is unreal",
+      "true": "reaction",
+      "predicted": "analysis",
+      "note": "Contains a stat (50 pts, 60% shooting) which pulled the model toward analysis despite the emotional primary function."
+    },
+    {
+      "text": "Playoff basketball is a completely different sport than the regular season and teams that don't understand that never win anything.",
+      "true": "hot_take",
+      "predicted": "analysis",
+      "note": "Confident declarative framing with no evidence \u2014 but the model may have learned that confident tone without exclamation points maps to analysis."
+    }
+  ]
+}
