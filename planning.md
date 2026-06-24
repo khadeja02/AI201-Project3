@@ -58,7 +58,17 @@ A post like: *"LeBron's playoff win rate against top-seeded opponents is below .
 A post like: *"He just dropped 50 on 60% shooting — can't believe I'm watching this, he's unreal"* mixes reaction energy with a real number. **Decision rule:** If the primary function of the post is emotional expression about a specific moment, label it `reaction` even if it mentions a stat. If the post transitions from the immediate event into structured reasoning about what it means historically or tactically, label it `analysis`.
 
 ### Difficult cases encountered during annotation:
-*(to be filled in during Milestone 3 — at least 3 documented)*
+Case 1: "LeBron's playoff win rate against top-seeded opponents is below .500 — he's overrated."
+Could be analysis (cites a specific stat with a percentage) or hot_take (the stat exists only to support a predetermined verdict). I labeled it hot_take. The post starts from the conclusion ("he's overrated") and works backward to find a number. The stat is cherry-picked for effect — it ignores context like opponent strength, team construction, and era. A genuine analysis post builds toward a conclusion; this one already had one.
+
+Case 2: "He just dropped 50 on 60% shooting — can't believe I'm watching this, this man is unreal."
+Could be analysis (mentions specific performance statistics: 50 points, 60% shooting) or reaction (clearly emotional, responding to a live event). I labeled it reaction. The stats are embedded in an expression of disbelief ("can't believe I'm watching this") rather than used as evidence for any claim. The primary function of the post is emotional — the numbers are part of the amazement, not an argument.
+
+Case 3: "Teams that win 3+ championships do so because of culture and coaching, not player talent. You can build a dynasty without a top-10 all-time player. San Antonio proved it."
+Could be analysis (references a real historical example — the Spurs dynasty) or hot_take (the Spurs example doesn't actually support the claim, because Tim Duncan is widely considered a top-10 all-time player). I labeled it hot_take. The post uses the Spurs selectively, ignoring the most obvious counterevidence embedded in the very example it cites. Decision rule applied: if the evidence only works by ignoring widely known counterevidence, it's functioning as decoration, not reasoning.
+
+Case 4: "Ja Morant at his best is the most exciting player in the league to watch. The talent is undeniable."
+Could be hot_take (a bold claim without evidence) or reaction (expressive, fan-like tone). I labeled it hot_take. Even though the tone is admiring rather than aggressive, the post is making a comparative claim ("the most exciting") without any supporting argument. It asserts rather than reacts to a specific event — there's no game, play, or moment triggering it. Reactions are pegged to specific moments; this is a freestanding opinion.
 
 ---
 
